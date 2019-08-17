@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      $(document).ready(function() {
+        var i = 0;
+
+        $.get(
+          "https://rallycoding.herokuapp.com/api/music_albums",
+          function(response) {
+            var i = 0;
+            while (i < response.length) {
+            //   alert(response[i].title);
+              test = response[i].title;
+              document.getElementById("demo").innerHTML = test;
+              i++;/
+            }
+            // $.each(response, function(key, value) {
+            //   //use obj.id and obj.name here, for example:
+            //   alert(value.title);
+            // });
+          },
+          "JSON"
+        );
+      });
+    </script>
+  </body>
+</html>
